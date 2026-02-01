@@ -1,1 +1,1 @@
-# Dns-shop.ru-Test-Automation-Framework
+# Сhitatel.by-Test-Automation-Framework
