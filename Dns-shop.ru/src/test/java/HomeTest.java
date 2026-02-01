@@ -1,6 +1,5 @@
 import dns.driver.Driver;
 import dns.pages.HomePage;
-import dns.utils.Wait;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,10 +9,10 @@ public class HomeTest {
     private HomePage homePage;
 
     @BeforeEach
-    public void openHomePageAndCloseCookies(){
+    public void openHomePage(){
         homePage = new HomePage();
         homePage.open();
-        homePage.clickCookie();
+
     }
     @Test
     public void testIsLoginButtonEnable(){
@@ -22,6 +21,6 @@ public class HomeTest {
 
     @AfterEach
     public  void tearDown(){
-        Driver.quit();
+        //Driver.quit();
     }
 }

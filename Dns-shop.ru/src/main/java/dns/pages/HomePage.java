@@ -11,27 +11,22 @@ import java.time.Duration;
 
 public class HomePage {
 
-    private final String HOME_URL = "https://www.dns-shop.ru/";
-    public final By COOKIE_PATH = By.xpath("//div[@class='header-cookie-notification']");
-    public final By COOKIE_BUTTON = By.xpath("//div[@class='header-cookie-notification__btn']");
-    public final By LOGIN_BUTTON = By.xpath("//div[@class='header-bottom__user-block header-bottom__user-block_not-logged']");
+    private final String HOME_URL = "https://chitatel.by/";
+
+    public final By LOGIN_BUTTON = By.xpath("//div[@class=\"name\" and text()=\"Вход\"]");
 
     private WebDriver driver;
-    private WebDriverWait wait;
+
 
     public HomePage() {
         this.driver = Driver.getDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
     }
 
     public void open(){
         driver.get(HOME_URL);
     }
 
-    public void clickCookie(){
-        WebElement cookieButton = wait.until(ExpectedConditions.elementToBeClickable(COOKIE_BUTTON));
-        cookieButton.click();
-    }
 
     public void clickLogin(){
         driver.findElement(LOGIN_BUTTON).click();
